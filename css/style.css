@@ -67,9 +67,25 @@ span {
   transition: .5s all ease;
 }
 
-.container .main .wrapper .btn:hover {
+.container .main .wrapper:hover {
   background-color: #b3b3b3;
   color: black;
+}
+
+.container .main .wrapper::after {
+  content: '';
+}
+
+.container .main .wrapper--error {
+  background-color: red;
+}
+
+.container .main .wrapper--warming {
+  background-color: yellow;
+}
+
+.container .main .wrapper--warming:hover {
+  background-color: #666600;
 }
 
 .container .main .wrapper h2 {
@@ -78,5 +94,13 @@ span {
 
 .container .main .wrapper h2 span {
   font-size: 12px;
+}
+
+a:hover {
+  color: red;
+}
+
+a:active {
+  color: blue;
 }
 /*# sourceMappingURL=style.css.map */

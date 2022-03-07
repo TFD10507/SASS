@@ -1,15 +1,7 @@
-$fontsize_basic: 40px;
-$bgc: beige;
-$fontcolor: #333;
-$margin : 10px auto;
-$title: (
-    "h1" : 59px,
-    "h2" : 30px
-);
-
-$null : null;
-$ff: 'Times New Roman', Times, serif;
-
+@import 'var';
+@import 'header';
+@import 'footer';
+@import 'nav';
 
 body{
     font-size: $fontsize_basic;
@@ -120,9 +112,21 @@ $btn_font:#fff;
                 cursor: pointer;
                 transition: .5s all ease;
             }
-            .btn:hover{
+            &:hover{
                 background-color: lighten($btn_bg, 50);
                 color: darken($btn_font , 100);
+            }
+            &::after{
+                content: '';
+            }
+            &--error{
+                background-color: red;
+            }
+            &--warming{
+                background-color: yellow;
+                &:hover{
+                    background-color: darken(yellow,30);
+                }
             }
             h2{
                 font-size: 26px;
@@ -134,3 +138,12 @@ $btn_font:#fff;
     }
 }
 
+// 偽元素
+a{
+    &:hover{
+        color: red;
+    }
+    &:active{
+        color: blue;
+    }
+}
