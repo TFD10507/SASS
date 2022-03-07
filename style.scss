@@ -1,0 +1,27 @@
+$fontsize: 40px;
+$bgc: beige;
+$fontcolor: #333;
+$margin : 10px auto;
+$title: (
+    "h1" : 59px,
+    "h2" : 30px
+);
+    
+
+body{
+    font-size: $fontsize;
+    background-color: $bgc;
+    color: $fontcolor;
+    line-height: 10px;
+    padding: 10px;
+}
+.wrapper{
+    width: 1200px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: $margin;
+}
+
+h1{
+    font-size: map-get($title,h1);
+}
