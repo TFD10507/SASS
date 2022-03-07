@@ -51,3 +51,86 @@ $c:40px !default;
 .box1{
     font-size: $c;
 }
+
+// 字串轉型
+// 字串轉型 須放在#{ }，屬性值之外的都要這樣轉型
+$class : ".space";
+$path: ".assets";
+$attr: "padding";
+
+#{$class}{
+    width: 100%;
+    background-image: url('#{$path}/image.jpg');
+    #{$attr}:10px;
+}
+
+.var{
+    width: 10 + 10px;
+    height: 10px - 20;
+    margin: 10 * 10px;
+    font: (100/20);
+}
+
+//判斷式 @if / @else / @else if
+
+$theme : 1200px;
+
+.wrapper{
+    @if $theme == full{
+        width: 100%;
+    }@else{
+        width: $theme;
+        margin: 0 auto;
+    }
+}
+
+$width: 760;
+
+.wrapper{
+    @if $width >= 1200{
+        font-size: 16px;
+    }@else if $width < 1200 and $width >= 768 {
+        font-size: 18px;
+    }@else{
+        font-size: 20px;
+    }
+}
+
+$btn_bg: #333;
+$btn_font:#fff;
+
+
+
+
+
+//選擇器
+.container{
+    .main{
+        .wrapper{
+            h1{
+                font-size: 40px;
+            }
+            .btn{
+                width: 100%;
+                padding: 20px;
+                text-align: center;
+                background-color: $btn_bg;
+                // color: $btn_font;
+                color: invert($btn_bg);
+                cursor: pointer;
+                transition: .5s all ease;
+            }
+            .btn:hover{
+                background-color: lighten($btn_bg, 50);
+                color: darken($btn_font , 100);
+            }
+            h2{
+                font-size: 26px;
+                span{
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+}
+

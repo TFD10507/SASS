@@ -29,4 +29,54 @@ span {
 .box1 {
   font-size: 30px;
 }
+
+.space {
+  width: 100%;
+  background-image: url(".assets/image.jpg");
+  padding: 10px;
+}
+
+.var {
+  width: 20px;
+  height: -10px;
+  margin: 100px;
+  font: 5;
+}
+
+.wrapper {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.wrapper {
+  font-size: 20px;
+}
+
+.container .main .wrapper h1 {
+  font-size: 40px;
+}
+
+.container .main .wrapper .btn {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: #333;
+  color: #cccccc;
+  cursor: pointer;
+  -webkit-transition: .5s all ease;
+  transition: .5s all ease;
+}
+
+.container .main .wrapper .btn:hover {
+  background-color: #b3b3b3;
+  color: black;
+}
+
+.container .main .wrapper h2 {
+  font-size: 26px;
+}
+
+.container .main .wrapper h2 span {
+  font-size: 12px;
+}
 /*# sourceMappingURL=style.css.map */
