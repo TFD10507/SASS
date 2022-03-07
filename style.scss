@@ -1,4 +1,4 @@
-$fontsize: 40px;
+$fontsize_basic: 40px;
 $bgc: beige;
 $fontcolor: #333;
 $margin : 10px auto;
@@ -6,13 +6,16 @@ $title: (
     "h1" : 59px,
     "h2" : 30px
 );
-    
+
+$null : null;
+$ff: 'Times New Roman', Times, serif;
 
 body{
-    font-size: $fontsize;
+    font-size: $fontsize_basic;
     background-color: $bgc;
     color: $fontcolor;
     line-height: 10px;
+    font-family:$ff;
     padding: 10px;
 }
 .wrapper{
@@ -20,6 +23,7 @@ body{
     font-size: 18px;
     font-weight: bold;
     margin: $margin;
+    height: $null;
 }
 
 h1{
