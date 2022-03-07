@@ -17,4 +17,16 @@ body {
 h1 {
   font-size: 59px;
 }
+
+span {
+  font-size: 20px;
+}
+
+.box {
+  font-size: 40px;
+}
+
+.box1 {
+  font-size: 30px;
+}
 /*# sourceMappingURL=style.css.map */

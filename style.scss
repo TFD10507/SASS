@@ -10,6 +10,7 @@ $title: (
 $null : null;
 $ff: 'Times New Roman', Times, serif;
 
+
 body{
     font-size: $fontsize_basic;
     background-color: $bgc;
@@ -28,4 +29,25 @@ body{
 
 h1{
     font-size: map-get($title,h1);
+}
+
+
+
+// 區域變數
+$a :10px;
+
+span{
+    $a:20px;
+    font-size: $a;
+    $b: 40px !global;
+}
+.box{
+    font-size: $b;
+}
+
+$c:30px;
+$c:40px !default;
+
+.box1{
+    font-size: $c;
 }
