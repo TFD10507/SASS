@@ -1,0 +1,45 @@
+// 宣告
+@mixin marginAuto($w, $top:0){
+    margin: $top auto 0;
+    width: $w;
+}
+
+@mixin yellow{
+    background-color: yellow;
+    color: #333;
+}
+
+// 套用
+.box{
+    @include marginAuto(300px, 30px);
+    @include yellow;
+}
+.box2{
+    @include marginAuto(400px);
+}
+
+
+// 大量共用的顏色
+@mixin body($bgc:#e2e2e2){
+    body{
+        background-color: $bgc;
+        font-size: 16px;
+        @content; 
+        //可以讓@include自由擴增屬性
+        // 動態調用
+    }
+}
+
+// 首頁
+@include body(){
+    h1{
+        font-size: 36px;
+    }
+    h2{
+        font-size: 28px;
+    }
+};
+
+
+// 內頁 想要不一樣的頁面
+@include body(#333);
