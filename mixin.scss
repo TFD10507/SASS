@@ -43,3 +43,50 @@
 
 // 內頁 想要不一樣的頁面
 @include body(#333);
+
+
+@mixin btn_default($w,$btn_bg,$border_radius:null){
+    width: 100%;
+    padding: $w;
+    text-align: center;
+    background-color: $btn_bg;
+    color: invert($btn_bg);
+    cursor: pointer;
+    transition: .3s all ease;
+    border-radius: $border_radius;
+    @content;
+    &:hover{
+        background-color: lighten($btn_bg,20);
+    }
+}
+
+.btn_submit{
+    @include btn_default(20px,rgb(0,181,253) ,5px);
+    box-shadow: 1px 1px 10px #e2e2e2;
+    margin-top: 10px;
+}
+.btn_cancel{
+    @include btn_default(15px,rgb(185,185,185) ,5px);
+}
+
+@mixin layout($class,$theme:full){
+    .#{$class}{
+        @if $theme==full {
+            width: 100%;
+            height: 100vh;
+            @content;
+        }
+        @else{
+            width: $theme;
+            margin: 0 auto;
+            height: 100vh;
+            @content;
+        }
+    }
+}
+
+@include layout(banner){
+    background-color: #fff;
+};
+@include layout(prod,1366px);
+@include layout(contactus);
