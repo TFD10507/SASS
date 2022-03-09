@@ -1,21 +1,39 @@
+@charset "UTF-8";
+.text {
+  font-size: 30px;
+  letter-spacing: 10px;
+}
+
 body {
   font-size: 40px;
-  background-color: beige;
+  font-family: "Arial, Helvetica, sans-serif";
+  background-color: #6ec807;
   color: #333;
+  font-weight: 400;
   line-height: 10px;
-  font-family: "Times New Roman", Times, serif;
   padding: 10px;
 }
 
+header nav ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header nav ul li {
+  padding: 0 20px;
+}
+
+/* css 註解 */
 .wrapper {
-  width: 1200px;
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px auto;
+  width: 1366px;
+  margin: 20px auto;
+  background-color: aquamarine;
 }
 
 h1 {
-  font-size: 59px;
+  font-size: 46px;
 }
 
 span {
@@ -23,7 +41,7 @@ span {
 }
 
 .box {
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .box1 {
@@ -32,19 +50,19 @@ span {
 
 .space {
   width: 100%;
-  background-image: url(".assets/image.jpg");
+  background-image: url("assets/images.jpg");
   padding: 10px;
 }
 
 .var {
-  width: 20px;
-  height: -10px;
-  margin: 100px;
+  width: 11px;
+  height: 60px;
+  margin: 90px;
   font: 5;
 }
 
 .wrapper {
-  width: 1200px;
+  width: 1366px;
   margin: 0 auto;
 }
 
@@ -52,40 +70,20 @@ span {
   font-size: 20px;
 }
 
+.container section .wrapper h1 {
+  font-size: 30px;
+}
+
+section .wrapper h2 {
+  font-size: 28px;
+}
+
+section .wrapper h2 span {
+  font-size: 15px;
+}
+
 .container .main .wrapper h1 {
   font-size: 40px;
-}
-
-.container .main .wrapper .btn {
-  width: 100%;
-  padding: 20px;
-  text-align: center;
-  background-color: #333;
-  color: #cccccc;
-  cursor: pointer;
-  -webkit-transition: .5s all ease;
-  transition: .5s all ease;
-}
-
-.container .main .wrapper:hover {
-  background-color: #b3b3b3;
-  color: black;
-}
-
-.container .main .wrapper::after {
-  content: '';
-}
-
-.container .main .wrapper--error {
-  background-color: red;
-}
-
-.container .main .wrapper--warming {
-  background-color: yellow;
-}
-
-.container .main .wrapper--warming:hover {
-  background-color: #666600;
 }
 
 .container .main .wrapper h2 {
@@ -96,11 +94,42 @@ span {
   font-size: 12px;
 }
 
+.btn {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: #ad0026;
+  color: #52ffd9;
+  cursor: pointer;
+  -webkit-transition: .3s all ease;
+  transition: .3s all ease;
+}
+
+.btn:hover {
+  background-color: #ff1448;
+}
+
+.btn::after {
+  content: '';
+}
+
+.btn--error {
+  background-color: #ff0808;
+}
+
+.btn--warning {
+  background-color: #fbff00;
+}
+
+.btn--warning:hover {
+  background-color: #979900;
+}
+
 a:hover {
-  color: red;
+  color: #ad0026;
 }
 
 a:active {
-  color: blue;
+  color: #6ec807;
 }
 /*# sourceMappingURL=style.css.map */

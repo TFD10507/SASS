@@ -1,149 +1,181 @@
-@import 'var';
-@import 'header';
-@import 'footer';
-@import 'nav';
 
-body{
-    font-size: $fontsize_basic;
-    background-color: $bgc;
-    color: $fontcolor;
-    line-height: 10px;
-    font-family:$ff;
-    padding: 10px;
-}
-.wrapper{
-    width: 1200px;
-    font-size: 18px;
-    font-weight: bold;
-    margin: $margin;
-    height: $null;
+@import 'sass/var';
+@import 'sass/header';
+@import 'sass/footer';
+
+
+
+/* css 註解 */
+
+
+.wrapper {
+  width: 1366px;
+  margin: $margin;
+  background-color: aquamarine;
+  height: $null;
 }
 
-h1{
-    font-size: map-get($title,h1);
+h1 {
+  font-size: map-get($title, h1);
 }
 
 
 
 // 區域變數
-$a :10px;
 
-span{
-    $a:20px;
-    font-size: $a;
-    $b: 40px !global;
-}
-.box{
-    font-size: $b;
+$a : 10px;
+
+span {
+  $a: 20px;
+  font-size: $a;
+  $b: 30px !global; // 提升全域
 }
 
-$c:30px;
-$c:40px !default;
 
-.box1{
-    font-size: $c;
+.box {
+  font-size: $b; // 取到全域變數
 }
+
+
+$c : 30px;
+$c : 40px !default;
+
+.box1 {
+  font-size: $c;
+}
+
 
 // 字串轉型
-// 字串轉型 須放在#{ }，屬性值之外的都要這樣轉型
+
 $class : ".space";
-$path: ".assets";
+$path : "assets";
 $attr: "padding";
 
-#{$class}{
+#{$class} {
+
+  width: 100%;
+  background-image: url('#{$path}/images.jpg');
+  #{$attr}: 10px;
+
+}
+
+.var {
+  width: 10px + 1px;
+  height: 100px - 20*2;
+  margin: 10px * 9;
+  font: (100 / 20); // 除法要特別注意
+}
+
+// 判斷式  @if /@else/ @else if
+$theme : 1366px;
+
+.wrapper {
+  @if $theme==full {
     width: 100%;
-    background-image: url('#{$path}/image.jpg');
-    #{$attr}:10px;
+
+  }
+
+  @else {
+    width: $theme;
+    margin: 0 auto;
+  }
 }
 
-.var{
-    width: 10 + 10px;
-    height: 10px - 20;
-    margin: 10 * 10px;
-    font: (100/20);
+
+$width : 767;
+
+.wrapper {
+  @if $width>=1200 {
+
+    font-size: 16px;
+
+  }
+
+  @else if $width < 1200 and $width>=768 {
+    font-size: 18px;
+  }
+
+  @else {
+    font-size: 20px;
+
+  }
 }
 
-//判斷式 @if / @else / @else if
 
-$theme : 1200px;
+$btn_bg : rgb(173, 0, 38);
+$btn_font : #fff;
 
-.wrapper{
-    @if $theme == full{
-        width: 100%;
-    }@else{
-        width: $theme;
-        margin: 0 auto;
-    }
+
+
+// css
+.container section .wrapper h1 {
+  font-size: 30px;
 }
 
-$width: 760;
-
-.wrapper{
-    @if $width >= 1200{
-        font-size: 16px;
-    }@else if $width < 1200 and $width >= 768 {
-        font-size: 18px;
-    }@else{
-        font-size: 20px;
-    }
+section .wrapper h2 {
+  font-size: 28px;
 }
 
-$btn_bg: #333;
-$btn_font:#fff;
+section .wrapper h2 span {
+  font-size: 15px;
+}
 
+// scss
+.container {
+  .main {
+    .wrapper {
+      h1 {
+        font-size: 40px;
+      }
 
+      h2 {
+        font-size: 26px;
 
+        span {
 
-
-//選擇器
-.container{
-    .main{
-        .wrapper{
-            h1{
-                font-size: 40px;
-            }
-            .btn{
-                width: 100%;
-                padding: 20px;
-                text-align: center;
-                background-color: $btn_bg;
-                // color: $btn_font;
-                color: invert($btn_bg);
-                cursor: pointer;
-                transition: .5s all ease;
-            }
-            &:hover{
-                background-color: lighten($btn_bg, 50);
-                color: darken($btn_font , 100);
-            }
-            &::after{
-                content: '';
-            }
-            &--error{
-                background-color: red;
-            }
-            &--warming{
-                background-color: yellow;
-                &:hover{
-                    background-color: darken(yellow,30);
-                }
-            }
-            h2{
-                font-size: 26px;
-                span{
-                    font-size: 12px;
-                }
-            }
+          font-size: 12px;
         }
+      }
+
+  
     }
+
+  }
+}
+
+
+.btn {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  background-color: $btn_bg;
+  color: invert($btn_bg); // 反轉
+  cursor: pointer;
+  transition: .3s all ease;
+  &:hover {
+    background-color: lighten($btn_bg, 20); // 顏色內建                  
+  }
+  &::after {
+     content: '';
+  }
+  &--error {
+     background-color: rgb(255, 8, 8);
+  }
+  &--warning {
+     background-color: #fbff00;
+     &:hover {
+        background-color: darken(#fbff00 , 20);
+     }
+
+  }
 }
 
 // 偽元素
-a{
-    &:hover{
-        color: red;
-    }
-    &:active{
-        color: blue;
-    }
+a {
+  &:hover {
+    color:rgb(173, 0, 38); 
+  }
+  &:active {
+    color:rgb(110, 200, 7)
+  }
 }
