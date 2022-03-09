@@ -1127,4 +1127,77 @@
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
 }
+
+.img_banner {
+  background-image: url("images/banner.png");
+  background-size: cover;
+  width: 800px;
+  height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.img_item {
+  background-image: url("images/item.png");
+  background-size: cover;
+  width: 800px;
+  height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.img_a1 {
+  background-image: url("images/a1.jpg");
+  background-size: cover;
+  width: 800px;
+  height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.img_a2 {
+  background-image: url("images/a2.jpg");
+  background-size: cover;
+  width: 800px;
+  height: 600px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.spac {
+  margin-top: 10px;
+}
+
+h1 {
+  font-size: 60px;
+  color: #333;
+}
+
+h2 {
+  font-size: 36px;
+  color: #333;
+}
+
+h3 {
+  font-size: 24px;
+  color: #333;
+}
+
+span {
+  font-size: 14px;
+  color: #333;
+}
+
+a {
+  font-size: 12px;
+  color: #333;
+}
+
+.block {
+  color: #333;
+}
+
+.default {
+  color: #000;
+}
 /*# sourceMappingURL=foreach.css.map */
